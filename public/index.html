@@ -15,7 +15,7 @@
                     <button id="liffLogoutButton" class="btn btn-warning">Log out</button>
                 </div>
                 <br>
-                <p>Halo, Guest. Silahkan input angka range akhir, angka range awal, angka tebakan anda (opsional), dan kami akan memberikan anda random number. (Angka inputan lebih besar sama dengan 1)</p>
+                <p>Halo, <span class="userName"></span>. Silahkan input angka range akhir, angka range awal, angka tebakan anda (opsional), dan kami akan memberikan anda random number. (Angka inputan lebih besar sama dengan 1)</p>
             </div>
             <form id="form-data">
                 <div class="form-group">
@@ -42,53 +42,6 @@
                     <button id="closeWindowButton" class="btn btn-danger">Close LIFF App</button>
                 </div>
             </div>
-            <!-- PROFILE INFO -->
-            <div id="profileInfo" class="hidden textLeft">
-                <h2>Profile</h2>
-                <a href="#" onclick="toggleProfileData()">Close Profile</a>
-                <div id="profilePictureDiv">
-                </div>
-                <table>
-                    <tr>
-                        <th>userId</th>
-                        <td id="userIdProfileField"></td>
-                    </tr>
-                    <tr>
-                        <th>displayName</th>
-                        <td id="displayNameField"></td>
-                    </tr>
-                    <tr>
-                        <th>statusMessage</th>
-                        <td id="statusMessageField"></td>
-                    </tr>
-                </table>
-            </div>
-            <!-- LIFF DATA -->
-            <div id="liffData">
-                <h2 id="liffDataHeader" class="textLeft">LIFF Data</h2>
-                <table>
-                    <tr>
-                        <th>OS</th>
-                        <td id="deviceOS" class="textLeft"></td>
-                    </tr>
-                    <tr>
-                        <th>Language</th>
-                        <td id="browserLanguage" class="textLeft"></td>
-                    </tr>
-                    <tr>
-                        <th>LIFF SDK Version</th>
-                        <td id="sdkVersion" class="textLeft"></td>
-                    </tr>
-                    <tr>
-                        <th>isInClient</th>
-                        <td id="isInClient" class="textLeft"></td>
-                    </tr>
-                    <tr>
-                        <th>isLoggedIn</th>
-                        <td id="isLoggedIn" class="textLeft"></td>
-                    </tr>
-                </table>
-            </div>
             <div id="statusMessage">
                 <div id="isInClientMessage"></div>
                 <div id="apiReferenceMessage">
@@ -104,7 +57,7 @@
         <!-- LIFF ID ERROR -->
         <div id="liffIdErrorMessage" class="hidden">
             <p>You have not assigned any value for LIFF ID.</p>
-            <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku account follwing the below steps: </p>
+            <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku account following the below steps: </p>
             <code id="code-block">
                 <ol>
                     <li>Go to `Dashboard` in your Heroku account.</li>
