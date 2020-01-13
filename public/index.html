@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>ranugen</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -15,9 +17,11 @@
                     <button id="liffLogoutButton" class="btn btn-warning">Log out</button>
                 </div>
                 <br>
-                <p>Halo, <span class="userName"></span>. Silahkan input angka range akhir, angka range awal, angka tebakan anda (opsional), dan kami akan memberikan anda random number. (Angka inputan lebih besar sama dengan 1)</p>
+                <p></p>Halo, <span class="userName"></span></p>
+                <p>Silahkan input angka range akhir, angka range awal, angka tebakan anda (opsional)</p>
+                <p>dan kami akan memberikan anda random number. (Angka inputan lebih besar sama dengan 1)</p>
             </div>
-            <form id="form-data">
+            <form id="form-data" class="well">
                 <div class="form-group">
                     <label>Batas Akhir</label>
                     <input type="number" class="form-control" id="last-number" name="last-number" min="1" oninput="validity.valid||(value='');">
