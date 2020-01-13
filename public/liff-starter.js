@@ -27,7 +27,7 @@ window.onload = function() {
         initializeLiffOrDie(myLiffId);
     }
 
-    liff.getProfile().then(function(profile) {
+    await liff.getProfile().then(function(profile) {
             userName = profile.displayName;
         }).catch(function(error) {
             console.log(error);
