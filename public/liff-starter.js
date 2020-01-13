@@ -27,13 +27,13 @@ window.onload = function() {
         initializeLiffOrDie(myLiffId);
     }
 
-    await liff.getProfile().then(function(profile) {
+    liff.getProfile().then(function(profile) {
+            document.getElementById("userName").innerHTML = profile.displayName;
             userName = profile.displayName;
         }).catch(function(error) {
             console.log(error);
         });
     
-    document.getElementById("userName").innerHTML = userName;
 };
 
 /**
