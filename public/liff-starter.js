@@ -131,26 +131,30 @@ function registerButtonHandlers() {
         }
     });
 
-    // get profile call
+    // get profile call        
     document.getElementById('getProfileButton').addEventListener('click', function() {
-        liff.getProfile().then(function(profile) {
-            document.getElementById('userIdProfileField').textContent = profile.userId;
-            document.getElementById('displayNameField').textContent = profile.displayName;
+        if (liff.isLoggedIn()) {
+            liff.getProfile().then(function(profile) {
+                document.getElementById('userIdProfileField').textContent = profile.userId;
+                document.getElementById('displayNameField').textContent = profile.displayName;
 
-            const profilePictureDiv = document.getElementById('profilePictureDiv');
-            if (profilePictureDiv.firstElementChild) {
-                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-            }
-            const img = document.createElement('img');
-            img.src = profile.pictureUrl;
-            img.alt = 'Profile Picture';
-            profilePictureDiv.appendChild(img);
+                const profilePictureDiv = document.getElementById('profilePictureDiv');
+                if (profilePictureDiv.firstElementChild) {
+                    profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+                }
+                const img = document.createElement('img');
+                img.src = profile.pictureUrl;
+                img.alt = 'Profile Picture';
+                profilePictureDiv.appendChild(img);
 
-            document.getElementById('statusMessageField').textContent = profile.statusMessage;
-            toggleProfileData();
-        }).catch(function(error) {
-            window.alert('Error getting profile: ' + error);
-        });
+                document.getElementById('statusMessageField').textContent = profile.statusMessage;
+                toggleProfileData();
+            }).catch(function(error) {
+                window.alert('Error getting profile: ' + error);
+            });
+        } else {
+            window.alert('Ermmm, you are guest right? Am I wrong?');
+        }
     });
 
     // login call, only when external browser is used

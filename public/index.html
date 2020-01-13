@@ -1,10 +1,10 @@
 <html>
     <head>
         <title>ranugen</title>
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div id="liffAppContent" class="container">
@@ -15,19 +15,19 @@
                     <button id="liffLogoutButton" class="btn btn-warning">Log out</button>
                 </div>
                 <br>
-                <p>Halo, Guest. Silahkan input angka range awal, angka range akhir, angka tebakan anda (opsional), dan kami akan memberikan anda random number. (Angka inputan lebih besar sama dengan 1)</p>
+                <p>Halo, Guest. Silahkan input angka range akhir, angka range awal, angka tebakan anda (opsional), dan kami akan memberikan anda random number. (Angka inputan lebih besar sama dengan 1)</p>
             </div>
             <form id="form-data">
-                <div class="form-group">
-                    <label>Batas Awal</label>
-                    <input type="number" class="form-control" id="first-number" name="first-number" min="1" oninput="validity.valid||(value='');">
-                </div>
                 <div class="form-group">
                     <label>Batas Akhir</label>
                     <input type="number" class="form-control" id="last-number" name="last-number" min="1" oninput="validity.valid||(value='');">
                 </div>
                 <div class="form-group">
-                    <label>Tebakan Anda (Kosongi / Isi dengan 0 jika tidak ingin menebak)</label>
+                    <label>Batas Awal</label>
+                    <input type="number" class="form-control" id="first-number" name="first-number" min="1" oninput="validity.valid||(value='');">
+                </div>
+                <div class="form-group">
+                    <label>Tebakan Anda (Kosongi jika tidak ingin menebak)</label>
                     <input type="number" class="form-control" id="guess-number" name="guess-number" min="1" oninput="validity.valid||(value='');">
                 </div>
                 <input type="button" value="Proses" onclick="generateRandomNumber();" class="btn btn-success" />
@@ -111,16 +111,15 @@
                     </tr>
                 </table>
             </div>
-            <!-- LOGIN LOGOUT BUTTONS -->
-            <div class="buttonGroup">
-                <button id="liffLoginButton">Log in</button>
-                <button id="liffLogoutButton">Log out</button>
-            </div>
             <div id="statusMessage">
                 <div id="isInClientMessage"></div>
                 <div id="apiReferenceMessage">
-                    <p>Available LIFF methods vary depending on the browser you use to open the LIFF app.</p>
-                    <p>Please refer to the <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">API reference page</a> for more information.</p>
+                    <p>Interested in LIFF App?
+                        <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">
+                            Click Here
+                        </a>
+                        for more information.
+                    </p>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 $(function(){
-	$('#first-number').change(function(){
-		$('.form-control:not(#first-number)').prop('max',this.value)
+	$('#last-number').change(function(){
+		$('.form-control:not(#last-number)').prop('max',this.value)
 	});
 });
 
