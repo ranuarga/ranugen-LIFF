@@ -33,7 +33,7 @@ window.onload = function() {
             console.log(error);
         });
     
-    document.getElementsByClassName("userName").innerHTML = userName;
+    document.getElementById("userName").innerHTML = userName;
 };
 
 /**
