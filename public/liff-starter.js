@@ -26,14 +26,6 @@ window.onload = function() {
         myLiffId = defaultLiffId;
         initializeLiffOrDie(myLiffId);
     }
-
-    liff.getProfile().then(function(profile) {
-            document.getElementById("userName").innerHTML = profile.displayName;
-            userName = profile.displayName;
-        }).catch(function(error) {
-            console.log(error);
-        });
-    
 };
 
 /**
@@ -117,6 +109,11 @@ function registerButtonHandlers() {
     // sendMessages call
     document.getElementById('sendMessageButton').addEventListener('click', function() {
         if (!liff.isInClient()) {
+            liff.getProfile().then(function(profile) {
+                    userName = profile.displayName;
+                }).catch(function(error) {
+                    console.log(error);
+                });
             window.alert('Hi juga ' + userName);
         } else {
             liff.sendMessages([{
@@ -132,6 +129,11 @@ function registerButtonHandlers() {
 
     // get profile call        
     document.getElementById('getProfileButton').addEventListener('click', function() {
+        liff.getProfile().then(function(profile) {
+                userName = profile.displayName;
+            }).catch(function(error) {
+                console.log(error);
+            });
         window.alert('Ermmm, you are ' + userName + ' right? Am I wrong?');
     });
 
