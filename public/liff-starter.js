@@ -121,7 +121,7 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': "You've successfully sent a message! Hooray!"
+                'text': "Hi!"
             }]).then(function() {
                 window.alert('Hi juga ' + userName);
             }).catch(function(error) {
@@ -157,38 +157,4 @@ function registerButtonHandlers() {
 */
 function sendAlertIfNotInClient() {
     alert('This button is unavailable as LIFF is currently being opened in an external browser.');
-}
-
-/**
-* Toggle access token data field
-*/
-function toggleAccessToken() {
-    toggleElement('accessTokenData');
-}
-
-/**
-* Toggle profile info field
-*/
-function toggleProfileData() {
-    toggleElement('profileInfo');
-}
-
-/**
-* Toggle scanCode result field
-*/
-function toggleQrCodeReader() {
-    toggleElement('scanQr');
-}
-
-/**
-* Toggle specified element
-* @param {string} elementId The ID of the selected element
-*/
-function toggleElement(elementId) {
-    const elem = document.getElementById(elementId);
-    if (elem.offsetWidth > 0 && elem.offsetHeight > 0) {
-        elem.style.display = 'none';
-    } else {
-        elem.style.display = 'block';
-    }
 }
