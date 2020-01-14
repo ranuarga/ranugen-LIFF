@@ -109,17 +109,25 @@ function registerButtonHandlers() {
     // sendMessages call
     document.getElementById('sendMessageButton').addEventListener('click', function() {
         if (!liff.isInClient()) {
-            liff.getProfile().then(function(profile) {
-                    window.alert('Hi juga ' + profile.displayName);
-                }).catch(function(error) {
-                    console.log(error);
-                });
+            if (liff.isLoggedIn()) {
+                liff.getProfile().then(function(profile) {
+                        window.alert('Hi juga ' + profile.displayName);
+                    }).catch(function(error) {
+                        console.log(error);
+                    });
+            } else {
+                window.alert('Hi juga Guest');
+            }
         } else {
             liff.sendMessages([{
                 'type': 'text',
                 'text': "Hi!"
             }]).then(function() {
-                window.alert('Hi juga ' + userName);
+                liff.getProfile().then(function(profile) {
+                        window.alert('Hi juga ' + profile.displayName);
+                    }).catch(function(error) {
+                        console.log(error);
+                    });
             }).catch(function(error) {
                 window.alert('Error sending message: ' + error);
             });
@@ -128,11 +136,15 @@ function registerButtonHandlers() {
 
     // get profile call        
     document.getElementById('getProfileButton').addEventListener('click', function() {
-        liff.getProfile().then(function(profile) {
-                window.alert('Ermmm, you are ' + profile.displayName + ' right? Am I wrong?');
-            }).catch(function(error) {
-                console.log(error);
-            });
+        if (liff.isLoggedIn()) {
+            liff.getProfile().then(function(profile) {
+                    window.alert('Ermmmm, you are ' + profile.displayName + ' right? Am I wrong?');
+                }).catch(function(error) {
+                    console.log(error);
+                });
+        } else {
+            window.alert('Ermmmm, you are Guest right? Am I wrong?');
+        }
     });
 
     // login call, only when external browser is used
