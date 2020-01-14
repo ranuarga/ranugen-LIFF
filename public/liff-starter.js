@@ -139,9 +139,8 @@ function registerButtonHandlers() {
     document.getElementById('liffLoginButton').addEventListener('click', function() {
         if (!liff.isLoggedIn()) {
             // set `redirectUri` to redirect the user to a URL other than the front page of your LIFF app.
-            liff.login();
+            liff.login({ redirectUri: "https://ranugen.herokuapp.com" });
         }
-        // window.location.reload();
     });
 
     // logout call only when external browse
