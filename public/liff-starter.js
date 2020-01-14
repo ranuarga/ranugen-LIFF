@@ -110,11 +110,10 @@ function registerButtonHandlers() {
     document.getElementById('sendMessageButton').addEventListener('click', function() {
         if (!liff.isInClient()) {
             liff.getProfile().then(function(profile) {
-                    userName = profile.displayName;
+                    window.alert('Hi juga ' + profile.displayName);
                 }).catch(function(error) {
                     console.log(error);
                 });
-            window.alert('Hi juga ' + userName);
         } else {
             liff.sendMessages([{
                 'type': 'text',
@@ -130,11 +129,10 @@ function registerButtonHandlers() {
     // get profile call        
     document.getElementById('getProfileButton').addEventListener('click', function() {
         liff.getProfile().then(function(profile) {
-                userName = profile.displayName;
+                window.alert('Ermmm, you are ' + profile.displayName + ' right? Am I wrong?');
             }).catch(function(error) {
                 console.log(error);
             });
-        window.alert('Ermmm, you are ' + userName + ' right? Am I wrong?');
     });
 
     // login call, only when external browser is used
